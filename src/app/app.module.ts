@@ -10,12 +10,18 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import { ServerDataComponent } from './server-data/server-data.component';
+import { ScoresComponent } from './scores/scores.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    HeaderComponent
+    HeaderComponent,
+    ServerDataComponent,
+    ScoresComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
