@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Pseudo</h1>
+<form [formGroup]="form">
+  <div mat-dialog-content>
+    <p>Entrer l'identifiant de la partie</p>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Pseudo</mat-label>
+      <input matInput formControlName="pseudo">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Annuler</button>
+    <button mat-button [disabled]="form.invalid" [mat-dialog-close]="form" cdkFocusInitial>Rejoindre</button>
+  </div>
+</form>

@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  URL: 'ws://localhost:3000/api/game/play',
   WS: 'ws://localhost:3000/api/game/play',
 };
 

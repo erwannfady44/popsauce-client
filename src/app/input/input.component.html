@@ -1,7 +1,7 @@
 <section class="body-input">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Pokemon</mat-label>
-        <input type="text" matInput>
+        <input type="text" matInput [(ngModel)]="input">
     </mat-form-field>
-    <button mat-raised-button color="primary">Valider</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Valider</button>
 </section>
