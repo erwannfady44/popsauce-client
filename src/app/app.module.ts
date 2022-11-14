@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameComponent } from './game/game.component';
 import { HeaderComponent } from './header/header.component';
-import {RouterOutlet} from "@angular/router";
+import {RouterModule, RouterOutlet} from "@angular/router";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import {RouterOutlet} from "@angular/router";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterOutlet
+    MatInputModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
