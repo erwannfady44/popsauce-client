@@ -13,10 +13,13 @@ export class GameService {
   private status!: BehaviorSubject<number>;
   private winner!: BehaviorSubject<number>;
   private players!: BehaviorSubject<Array<Object>>
+  private image!:BehaviorSubject<string>
+  private input !: BehaviorSubject<string>
 
   constructor(private ws: WebSocketService) {
     this.status = new BehaviorSubject<number>(0)
     this.players = new BehaviorSubject<Array<Object>>([{}])
+    this.image = new BehaviorSubject<string>('');
   }
 
   joinGame(pseudo: string):void {
@@ -36,5 +39,16 @@ export class GameService {
   }
 
   private dataReceived(data: any) {
+    if (data.url) {
+      this.image.next(data.url);
+    } else if (data.state === 'win') {
+      this.input.next('');
+    } else if (data instanceof Array) {
+      let tab = this.players.getValue();
+      for (const d of data) {
+        tab.push({pseudo: d.pseudo, score: d.score})
+      }
+      this.players.next(tab);
+    }
   }
 }
